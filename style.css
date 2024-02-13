@@ -1,10 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap");
 
 body {
   margin: 0;
   padding: 0;
-  font-family: "Pacifico", cursive;
+  font-family: "Nanum Pen Script", cursive;
+  font-weight: 400;
+  font-style: normal;
   background-color: rgb(238, 151, 219);
+  background-image: url("src/img/corazónes128.png");
 }
 .container {
   display: flex;
@@ -14,9 +17,10 @@ body {
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 .container .title {
-  font-size: 34px;
+  font-size: 2.8em;
   color: rgb(255, 255, 255);
   text-shadow: 2px 2px 7px rgb(0, 0, 0);
   position: absolute;
@@ -27,21 +31,28 @@ body {
 }
 .container .buttons .btn {
   position: absolute;
-  padding: 5px 20px;
-  font-size: 18px;
-  font-family: "Pacifico", cursive;
-  background-color: rgb(255, 0, 0) ;
+  padding: 1px 15px;
+  font-size: 2.5em;
+  font-family: "Nanum Pen Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+  background-color: rgb(255, 0, 0);
   color: white;
   border: 2px black solid;
   border-radius: 5px;
+  text-shadow: 2px 2px 7px rgb(0, 0, 0);
 }
 .container .buttons > #btnno {
   margin-left: 70px;
 }
 .heart {
-  width: 210px;
-  height: 210px;
   background-color: rgb(255, 0, 0);
+  width: 15em;
+  height: 15em;
+}
+
+.heart,
+.contorno {
   transform: rotate(45deg);
   margin-top: 100px;
   position: absolute;
@@ -51,12 +62,18 @@ body {
 }
 .heart:before,
 .heart:after {
+  background-color: rgb(255, 0, 0);
+}
+
+.heart:before,
+.heart:after,
+.contorno::before,
+.contorno::after {
   content: "";
   display: block;
   width: 100%;
   height: 100%;
   position: absolute;
-  background-color: rgb(255, 0, 0);
   border-radius: 50%;
 }
 .heart:before {
@@ -65,6 +82,24 @@ body {
 }
 .heart:after {
   top: -50%;
+  left: 0;
+}
+.contorno {
+  background-color: rgb(0, 0, 0);
+  width: 15.5em;
+  height: 15.5em;
+  z-index: -2;
+}
+.contorno:before,
+.contorno:after {
+  background-color: rgb(0, 0, 0);
+}
+.contorno:before {
+  top: 0;
+  left: -48%;
+}
+.contorno:after {
+  top: -48%;
   left: 0;
 }
 
